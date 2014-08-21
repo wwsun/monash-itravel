@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PrivateMaster.master.cs" Inherits="master_PublicMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="../css/menu.css" rel="stylesheet" />
+        <!--Bootstrap js with jquery dependency-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar-wrapper">
+            <div class="container">
+
+                <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">SEU-MONASH</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <asp:Menu ID="Menu1" runat="server" DataSourceID="siteMapDS" CssClass="NavigationMenu"
+                                StaticDisplayLevels="2" DynamicHorizontalOffset="1" Orientation="Horizontal"
+                                staticsubmenuiden="1px" MaximumDynamicDisplayLevels="4" StaticSubMenuIndent="0">
+
+                                <StaticMenuItemStyle ItemSpacing="10" CssClass="staticMenuItemStyle" />
+                                <StaticHoverStyle CssClass="staticHoverStyle" />
+                                <StaticSelectedStyle CssClass="staticMenuItemSelectedStyle" ForeColor="#FFFFFF"/>
+                                <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />
+                                <DynamicHoverStyle CssClass="menuItemMouseOver" />
+                                <DynamicMenuStyle CssClass="menuItem" />
+                                <DynamicSelectedStyle CssClass="menuItemSelected" ForeColor="#FFFFFF"/>
+
+                            </asp:Menu>
+                            <asp:SiteMapDataSource ID="siteMapDS" runat="server" SiteMapProvider="privateSiteMap" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <asp:ContentPlaceHolder ID="PhotoSlideHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="container marketing">
+
+            <asp:ContentPlaceHolder ID="ContentHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- FOOTER -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <!-- first row -->
+                        <hr class="featurette-divider" />
+                    </div>
+                    <div class="row">
+                        <!-- second row -->
+                        <div class="col-md-3">
+                            <h5>About</h5>
+                            <a href="#" target="_Blank">Copyright</a><br>
+                            <a href="#" target="_Blank">Acknowledgements</a><br>
+                            <a href="https://github.com/wwsun/" target="_Blank">Project Address</a><br>
+                            <a href="http://users.monash.edu.au/~sgrose/msh/disclaimer.htm" target="_Blank">Monash course disclaimer</a><br>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Devloper</h5>
+                            <a href="http://wwsun.github.io/about.html" target="_Blank">Weiwei SUN</a>
+                            <br>
+                            <a href="https://github.com/wwsun" target="_Blank">Github Home</a><br>
+                            <a href="http://www.weibo.com/swwol" target="_Blank">Sina Weibo</a><br>
+                            <a href="http://wwsun.github.com" target="_Blank">Personal Blog</a>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>University</h5>
+                            <a href="http://www.monash.edu.au" target="_Blank">Monash University</a>
+                            <br>
+                            <a href="http://www.seu.edu.cn" target="_Blank">Southeast University</a>
+                        </div>
+                        <div class="col-md-3">
+                            <h5>Copyright</h5>
+                            <p>All source codes are open for you. This website is an assignment project of monash university. </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- forth row -->
+                        <br />
+                        <br />
+                    </div>
+                    <div class="row">
+                        <!-- fifty row -->
+                        <br />
+                        <div class="copyright">
+                            <p class="text-center">Copyright © 2014 Weiwei SUN, Monash University</p>
+                            <p class="text-center">This is an assignment for FIT5192, Monash University.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+
+
+
+</body>
+</html>

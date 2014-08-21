@@ -1,0 +1,5 @@
+D:\MyProject\WebSites\ass2\DatabaseComp\bin\Debug\DatabaseComp.dll
+D:\MyProject\WebSites\ass2\DatabaseComp\bin\Debug\DatabaseComp.pdb
+D:\MyProject\WebSites\ass2\DatabaseComp\obj\Debug\DatabaseComp.dll
+D:\MyProject\WebSites\ass2\DatabaseComp\obj\Debug\DatabaseComp.pdb
+D:\MyProject\WebSites\ass2\DatabaseComp\obj\Debug\DatabaseComp.csprojResolveAssemblyReference.cache

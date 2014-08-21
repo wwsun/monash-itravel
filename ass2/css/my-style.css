@@ -1,0 +1,76 @@
+﻿.menu-banner {
+    height: 100px;
+    background-color:#000;
+}
+
+.menu-login {
+
+    color: #FFF;
+    padding: 6px;
+    background-color: #BDC3C7;
+}
+
+.menu-logo {
+    height: 80px;
+    padding-top: 25px;
+}
+
+.site-breadcrumb {
+  display: inline-block;
+}
+
+.site-breadcrumb-sep {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+
+.site-breadcrumb-current {
+    color:#777;
+}
+
+.NavigationMenu {
+    font-family: sans-serif;
+    font-size: 13pt;
+    padding: 35px;
+}
+
+.staticMenuItemStyle {
+    color: #777;
+    margin-top:5px;
+    margin-left:15px;
+}
+
+.dynamicMenuItemStyle {
+    margin: 5px;
+    padding: 8px;
+}
+
+
+.dynamicMenuStyle {
+    background-color:#BDC3C7;
+}
+.NavigationMenu a:hover,
+.NavigationMenu a:focus {
+    color: #FFF;
+}
+
+.TableHeader {
+    padding: 0;
+    text-align: left;
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+
+.Footer-Copyright {
+    color:#FFF;
+    background-color:#000;
+}
+
+.Footer-Copyright h4 {
+    color:#1ABC9C;
+}
+
+.Footer-Copyright a {
+    color:#FFF;
+}

@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PublicMaster.master.cs" Inherits="master_PublicMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>Title From Master Page</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="~/css/my-style.css" rel="stylesheet" />
+    <!--Bootstrap js with jquery dependency-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container">
+        <form id="form1" runat="server">
+            <div class="row menu-banner">
+
+                <div class="col-md-3 col-md-offset-1">
+                    <img src="~/img/logo.png" runat="server" class="menu-logo" /></div>
+                <div class="col-md-8">
+                    <asp:Menu ID="SiteMenu" runat="server" DataSourceID="siteMapDS"
+                        StaticDisplayLevels="2" Orientation="Horizontal"
+                        staticsubmenuiden="" MaximumDynamicDisplayLevels="2" CssClass="NavigationMenu">
+
+                        <StaticMenuItemStyle ForeColor="#777777" Font-Names="sans-serif"
+                            CssClass="staticMenuItemStyle" />
+                        <StaticHoverStyle ForeColor="#FFFFFF" CssClass="" />
+                        <StaticSelectedStyle ForeColor="#FFFFFF" />
+
+                        <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />
+                        <DynamicHoverStyle CssClass="" />
+                        <DynamicMenuStyle CssClass="dynamicMenuStyle" />
+                        <DynamicSelectedStyle CssClass="" ForeColor="" />
+
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="siteMapDS" runat="server" SiteMapProvider="privateSiteMap" />
+                </div>
+                <!--MENU-->
+            </div>
+
+            <asp:ContentPlaceHolder ID="PhotoSlideHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="ContentHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </form>
+
+    </div>
+    <!--body-container-->
+
+    <footer>
+        <div class="container">
+
+            <div class="row">
+                <!-- second row -->
+                <hr />
+                <div class="col-md-3 col-md-offset-2">
+                    <h4>About</h4>
+                    <a href="#" target="_Blank">Acknowledgements</a><br>
+                    <a href="https://github.com/wwsun/" target="_Blank">Project Address</a><br>
+                    <a href="http://users.monash.edu.au/~sgrose/msh/disclaimer.htm" target="_Blank">Monash course disclaimer</a><br>
+                </div>
+                <div class="col-md-3">
+                    <h4>Devloper</h4>
+                    <a href="http://wwsun.github.io/about.html" target="_Blank">Weiwei SUN</a>
+                    <br>
+                    <a href="https://github.com/wwsun" target="_Blank">Github Home</a><br>
+                    <a href="http://wwsun.github.com" target="_Blank">Developer Blog</a>
+                </div>
+                <div class="col-md-3">
+                    <h4>University</h4>
+                    <a href="http://www.monash.edu.au" target="_Blank">Monash University</a>
+                    <br>
+                    <a href="http://www.seu.edu.cn" target="_Blank">Southeast University</a>
+                </div>
+            </div>
+            <div class="row">
+                <br />
+            </div>
+            <div class="row Footer-Copyright">
+                <!-- fifty row -->
+                <div class="copyright">
+                    <br />
+                    <p class="text-center">Copyright © 2014 Weiwei SUN, Monash University. All Rights Reserved. 
+                        <b><a href="http://users.monash.edu.au/~sgrose/msh/disclaimer.htm" target="_Blank">Monash course disclaimer</a></b></p>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
