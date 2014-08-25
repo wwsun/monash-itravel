@@ -11,16 +11,28 @@ public partial class private_ShowCode : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         String filePath = Server.MapPath(Request.QueryString["filename"]);
+        String codePath = "";
+        if (Request.QueryString["filecode"]!=null)
+            codePath = Server.MapPath(Request.QueryString["filecode"]);
+        
         FileName.Text = Request.QueryString["filename"];
+        CodeName.Text = Request.QueryString["filecode"];
+        
         FileInfo file = new FileInfo(filePath);
-
+        FileInfo code = null;
+        if(codePath!="")
+            code = new FileInfo(codePath);
+        
         if (file.Extension  == ".aspx"
           || file.Extension == ".skin"
           || file.Extension == ".css"
           || file.Extension == ".config"
-          || file.Extension == ".master")
+          || file.Extension == ".master"
+          || file.Extension == ".cs")
         {
             Code.Text = ReadFile(filePath);
+            if(code!=null)
+                CsCode.Text = ReadFile(codePath);
         }
         else
         {

@@ -17,5 +17,19 @@ public partial class private_SearchRecords : System.Web.UI.Page
         Response.Redirect("SearchRecords.aspx?Username=" + txbTitle.Text);
     }
 
+    protected void btnAge_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("SearchRecords.aspx?Sex=" + txbTitle.Text);
+    }
 
+    protected void btnMail_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("SearchRecords.aspx?Email=" + txbTitle.Text);
+    }
+
+
+    protected void BtnSearchRecords_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowCode.aspx?filename=SearchRecords.aspx&filecode=SearchRecords.aspx.cs");
+    }
 }

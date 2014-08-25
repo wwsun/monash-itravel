@@ -17,25 +17,34 @@ public partial class _Default : System.Web.UI.Page
     {
         if (Page.IsValid)
         {
-            TextBox TxbUsername = LoginView1.FindControl("TxbUsername") as TextBox;
-            TextBox TxbPwd = LoginView1.FindControl("TxbPassword") as TextBox;
-            Label LblResult = LoginView1.FindControl("LblResult") as Label;
-            string username = TxbUsername.Text;
-            string password = TxbPwd.Text;
-            UserDao dao = new UserDao();
-            if (dao.login(username, password))
-            {
-                LblResult.Text = "Login success!";
-                FormsAuthentication.RedirectFromLoginPage(username, false);
-            }
-            else
-            {
-                LblResult.Text = "Please sign in.";
-            }
+            //TextBox TxbUsername = LoginView1.FindControl("TxbUsername") as TextBox;
+            //TextBox TxbPwd = LoginView1.FindControl("TxbPassword") as TextBox;
+            //Label LblResult = LoginView1.FindControl("LblResult") as Label;
+            //string username = TxbUsername.Text;
+            //string password = TxbPwd.Text;
+            //UserDao dao = new UserDao();
+            //if (dao.login(username, password))
+            //{
+            //    LblResult.Text = "Login success!";
+            //    FormsAuthentication.RedirectFromLoginPage(username, false);
+            //}
+            //else
+            //{
+            //    LblResult.Text = "Please sign in.";
+            //}
         }
     }
     protected void BtnSignOff_Click(object sender, EventArgs e)
     {
         FormsAuthentication.SignOut();
+        Response.Redirect("~/default.aspx");
+    }
+    protected void BtnAdRotator_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/ShowCode.aspx?filename=~/Default.aspx&filecode=~/Default.aspx.cs");
+    }
+    protected void BtnAdRotator2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/ShowCode.aspx?filename=~/master/MasterPage.master");
     }
 }

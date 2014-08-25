@@ -33,4 +33,8 @@ public partial class public_Login : System.Web.UI.Page
         }
       
     }
+    protected void BtnLoginSource_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/ShowCode.aspx?filename=~/Web.config&filecode=~/public/Register.aspx.cs");
+    }
 }

@@ -4,10 +4,18 @@
 }
 
 .menu-login {
+    font-family: sans-serif;
+    color: #2C3E50;
+    padding: 3px;
+    background-color: #ECF0F1;
+}
 
-    color: #FFF;
-    padding: 6px;
-    background-color: #BDC3C7;
+.menu-login a {
+    color:#000;
+}
+.menu-login a:hover {
+    color: #16A085;
+    text-decoration:none;
 }
 
 .menu-logo {
@@ -48,7 +56,7 @@
 
 
 .dynamicMenuStyle {
-    background-color:#BDC3C7;
+    background-color:#ECF0F1;
 }
 .NavigationMenu a:hover,
 .NavigationMenu a:focus {

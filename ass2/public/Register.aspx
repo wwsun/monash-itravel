@@ -5,7 +5,7 @@
     <script src="../js/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PhotoSlideHolder" runat="Server">
-    <br />
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentHolder" runat="Server">
     <div class="row" id="RegDiv" runat="server">
@@ -21,15 +21,17 @@
                             <label for="TxbUsername" class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-10">
                                 <asp:TextBox ID="TxbUsername" runat="server" class="form-control"></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="VldUsername" ControlToValidate="TxbUsername" runat="server" ForeColor="#CC3333"
-                                    ErrorMessage="Only word character(letter, number, or underscore) with 4 to 10 characters" ValidationExpression="\w{4,10}"></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="The username should not be empty!" ControlToValidate="TxbUsername" ForeColor="#CC3333" EnableClientScript="false"></asp:RequiredFieldValidator>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="TxbUsername" class="col-sm-2 control-label">Age</label>
                             <div class="col-sm-10">
-                                <asp:TextBox ID="TxbAge" runat="server" class="form-control" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="TxbAge" runat="server" class="form-control"></asp:TextBox>
+                                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="You should input a number" ControlToValidate="TxbAge" OnServerValidate="CustomValidator1_ServerValidate" EnableClientScript="false"></asp:CustomValidator>
+
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="The age should not be empty!" ControlToValidate="TxbAge" ForeColor="#CC3333" EnableClientScript="false"></asp:RequiredFieldValidator>
                                 <asp:RangeValidator ID="VldAge" runat="server" ErrorMessage="This age is not between 0 and 120." ForeColor="#CC3333"
                                     Type="Integer" MaximumValue="120" MinimumValue="0" ControlToValidate="TxbAge"></asp:RangeValidator>
                             </div>
@@ -49,8 +51,8 @@
                             <div class="col-sm-10">
                                 <asp:TextBox ID="TxbPassword2" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                 <asp:CompareValidator ID="VldPwdCmp" runat="server" ErrorMessage="Your password does not match!"
-                                    ControlToValidate="TxbPassword2" ControlToCompare="TxbPassword" ForeColor="#CC3333"></asp:CompareValidator>
-                                <asp:RequiredFieldValidator ID="vldPwd2" runat="server" ErrorMessage="You must confirm your password!"
+                                    ControlToValidate="TxbPassword2" ControlToCompare="TxbPassword" ForeColor="#CC3333" EnableClientScript="false"></asp:CompareValidator>
+                                <asp:RequiredFieldValidator ID="vldPwd2" runat="server" ErrorMessage="You must confirm your password!" EnableClientScript="false"
                                     ControlToValidate="TxbPassword2" ForeColor="#CC3333"></asp:RequiredFieldValidator>
                             </div>
                         </div>
@@ -80,7 +82,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="OptSexList" class="col-sm-2 control-label">Sex</label>
+                            <label for="OptSexList" class="col-sm-2 control-label">Gender</label>
                             <div class="col-sm-10">
                                 <div class="radio-inline">
                                     <asp:RadioButton ID="OptSexM" GroupName="OptSex" runat="server" Text="Male" Checked="true" />
@@ -107,7 +109,7 @@
                         <div class="form-group">
                             <label for="LsbSubscribe" class="col-sm-2 control-label">Subscribe</label>
                             <div class="col-sm-10">
-                                <asp:ListBox ID="LsbSubscibe" runat="server" Width="200px" SelectionMode="Multiple" BackColor="White" Font-Size="Medium">
+                                <asp:ListBox ID="LsbSubscibe" runat="server" Width="200px" SelectionMode="Multiple" BackColor="White" Font-Size="Medium" CssClass="form-control">
                                     <asp:ListItem>Latest news</asp:ListItem>
                                     <asp:ListItem>Latest notice</asp:ListItem>
                                     <asp:ListItem>Exam information</asp:ListItem>
@@ -123,7 +125,7 @@
                         <div class="form-group">
                             <label for="DroplistGrade" class="col-sm-2 control-label">Grade</label>
                             <div class="col-sm-10">
-                                <asp:DropDownList ID="DroplistGrade" runat="server" Width="200px" Font-Size="Medium">
+                                <asp:DropDownList ID="DroplistGrade" runat="server" Width="200px" Font-Size="Medium" CssClas="form-control">
                                     <asp:ListItem>PG-One</asp:ListItem>
                                     <asp:ListItem>PG-Two</asp:ListItem>
                                     <asp:ListItem>PG-Three</asp:ListItem>
@@ -134,7 +136,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <asp:Button ID="BtnRegister" CssClass="btn btn-info" runat="server" Text="Register" OnClick="BtnRegister_Click" />
+                                <asp:Button ID="BtnRegister" CssClass="btn btn-primary" runat="server" Text="Register" OnClick="BtnRegister_Click" />
                             </div>
                         </div>
                     </div>
@@ -148,7 +150,18 @@
                     <h3 class="panel-title">Notice</h3>
                 </div>
                 <div class="panel-body">
-                    I already have a account, I want to <a href="Login.aspx">log in</a> right now.
+                    <p><b>I already have a account, I want to <a href="Login.aspx">log in</a> right now.</b></p>
+                    <p>After you login this web site, you can do the following operations:</p>
+                    <ul>
+                        <li>Search Recordes</li>
+                        <li>Display Records</li>
+                        <li>Browser Events</li>
+                        <li>Send Emails</li>
+                    </ul>
+                    <br />
+                    <strong>Sources Codes:</strong>
+                    <p>Click the following button to open up a new tab in the browser to displaythe code of regiseration.</p>
+                    <asp:Button ID="BtnAddRecords" runat="server" Text="Add Records" CssClass="btn btn-primary" OnClick="BtnAddRecords_Click" />
                 </div>
             </div>
         </div>
@@ -174,6 +187,8 @@
                 </div>
                 <div class="panel-body">
                     <p>Please check your account information carefully, you can use this account to <a href="Login.aspx">log in</a>, or you can <a href="Register.aspx">register</a> a new account.</p>
+                    <asp:Button ID="BtnSearch" runat="server" Text="Search Records" CssClass="btn btn-default" OnClick="BtnSearch_Click" />
+                    <asp:Button ID="BtnDisplay" runat="server" Text="Display Records" CssClass="btn btn-default" OnClick="BtnDisplay_Click" />
                 </div>
             </div>
         </div>

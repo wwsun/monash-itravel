@@ -2,8 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head runat="server">
-    <title>Title From Master Page</title>
+<head runat="server">   
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href="~/css/my-style.css" rel="stylesheet" />
     <!--Bootstrap js with jquery dependency-->
@@ -12,6 +11,7 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <title></title>
 </head>
 <body>
     <div class="container">
@@ -25,15 +25,15 @@
                         StaticDisplayLevels="2" Orientation="Horizontal"
                         staticsubmenuiden="" MaximumDynamicDisplayLevels="2" CssClass="NavigationMenu">
 
-                        <StaticMenuItemStyle ForeColor="#777777" Font-Names="sans-serif"
+                       <StaticMenuItemStyle ForeColor="#777777" Font-Names="sans-serif"
                             CssClass="staticMenuItemStyle" />
                         <StaticHoverStyle ForeColor="#FFFFFF" CssClass="" />
                         <StaticSelectedStyle ForeColor="#FFFFFF" />
 
                         <DynamicMenuItemStyle CssClass="dynamicMenuItemStyle" />
-                        <DynamicHoverStyle CssClass="" />
+                        <DynamicHoverStyle ForeColor="#000000" />
                         <DynamicMenuStyle CssClass="dynamicMenuStyle" />
-                        <DynamicSelectedStyle CssClass="" ForeColor="" />
+                        <DynamicSelectedStyle ForeColor="#000000" />
 
                     </asp:Menu>
                     <asp:SiteMapDataSource ID="siteMapDS" runat="server" SiteMapProvider="privateSiteMap" />
@@ -87,6 +87,7 @@
                     <br />
                     <p class="text-center">Copyright © 2014 Weiwei SUN, Monash University. All Rights Reserved. 
                         <b><a href="http://users.monash.edu.au/~sgrose/msh/disclaimer.htm" target="_Blank">Monash course disclaimer</a></b></p>
+                    <p class="text-center">Acknowledgements: The UI is powered by Bootstrap. All photos are taken by Weiwei SUN. </p>
                     <br />
                     <br />
                 </div>

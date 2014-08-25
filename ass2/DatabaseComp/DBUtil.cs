@@ -58,14 +58,6 @@ namespace DatabaseComp
             return flag;
         }
 
-        public DataSet GetEvents()
-        {
-            String query = "SELECT * FROM [event]";
-            OleDbCommand cmd = new OleDbCommand(query);
-            DataSet ds = this.FillDataSet(cmd, "event");
-            return ds;
-        }
-
         internal protected DataSet FillDataSet(OleDbCommand cmd, string tableName)
         {
             OleDbConnection con = new OleDbConnection(connectionString);

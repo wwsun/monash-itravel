@@ -29,6 +29,17 @@
                 </asp:GridView>
             </div>
             <div class="alert alert-danger" role="alert"><asp:Label ID="lblMail" runat="server"></asp:Label></div>
+            
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Source codes</h3>
+              </div>
+              <div class="panel-body">
+                    Click the following button to check the source of of this page.
+                  <asp:Button ID="BtnMailCode" runat="server" Text="Email" CssClass="btn btn-primary" OnClick="BtnMailCode_Click" />
+              </div>
+            </div>
+            
         </div>
         <div class="col-md-8">
             <div class="panel panel-default">
@@ -38,14 +49,14 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <h4>FROM:</h4>
+                        <h4>From:</h4>
                         Weiwei SUN
                     </li>
                     <li class="list-group-item">
-                        <h4>SUBJECT:</h4>
+                        <h4>Subject:</h4>
                         <asp:TextBox ID="TxbSubject" CssClass="form-control" runat="server"></asp:TextBox></li>
                     <li class="list-group-item">
-                        <h4>ATTACHMENT</h4>
+                        <h4>Attachment:</h4>
                         <asp:FileUpload ID="fileUpload" runat="server" /></li>
                     <li class="list-group-item">
                         <h4>Message</h4>

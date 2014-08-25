@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/MasterPage.master" AutoEventWireup="true" CodeFile="Events.aspx.cs" Inherits="private_Events" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="PhotoSlideHolder" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="PhotoSlideHolder" runat="Server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentHolder" Runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentHolder" runat="Server">
     <div class="row">
         <div class="col-md-6">
             <asp:Calendar ID="EventCalendar" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" OnDayRender="EventCalendar_DayRender"
@@ -20,15 +20,17 @@
             </asp:Calendar>
         </div>
         <div class="col-md-6">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Upcoming Events</h3>
-              </div>
-              <ul class="list-group">
-                  <asp:Label ID="LblEvent" runat="server"></asp:Label>
-              </ul>
+            <div class="alert alert-success" role="alert">
+                <asp:Label ID="LblSelection" runat="server"></asp:Label>
             </div>
-            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Events of this Month</h3>
+                </div>
+                <ul class="list-group">
+                    <asp:Label ID="LblEvent" runat="server"></asp:Label>
+                </ul>
+            </div>
         </div>
     </div>
 </asp:Content>

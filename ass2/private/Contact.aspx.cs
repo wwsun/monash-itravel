@@ -53,7 +53,7 @@ public partial class private_Contact : System.Web.UI.Page
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.monash.edu.au";
                 smtp.Send(newMsg);
-                lblMail.Text = "Mail Successfully Sent";
+                lblMail.Text = "Result: Mail Successfully Sent";
             }
             catch (Exception exc)
             {
@@ -70,7 +70,7 @@ public partial class private_Contact : System.Web.UI.Page
           System.IO.Path.GetExtension(fileUpload.PostedFile.FileName);
         if ((strExt != ".gif") && (strExt != ".jpg"))
         {
-            lblMail.Text = "Invalid File Type";
+            lblMail.Text = "Result: Invalid File Type";
         }
         else
         {
@@ -80,5 +80,9 @@ public partial class private_Contact : System.Web.UI.Page
             fileUpload.PostedFile.SaveAs(strPath);
         }
         return blnFileOK;
+    }
+    protected void BtnMailCode_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/ShowCode.aspx?filename=~/private/Contact.aspx&filecode=~/private/Contact.aspx.cs");
     }
 }

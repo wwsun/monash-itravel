@@ -73,4 +73,28 @@ public partial class public_Register : System.Web.UI.Page
             }
         }
     }
+    protected void BtnAddRecords_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/ShowCode.aspx?filename=~/public/Register.aspx&filecode=~/public/Register.aspx.cs");
+    }
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        try
+        {
+            int age = Convert.ToInt32(TxbAge.Text);
+            args.IsValid = true;
+        }
+        catch
+        {
+            args.IsValid = false;
+        }
+    }
+    protected void BtnSearch_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/SearchRecords.aspx");
+    }
+    protected void BtnDisplay_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/private/DisplayRecords.aspx");
+    }
 }

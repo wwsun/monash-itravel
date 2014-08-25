@@ -11,4 +11,12 @@ public partial class private_DisplayRecords : System.Web.UI.Page
     {
 
     }
+    protected void BtnSource_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowCode.aspx?filename=DisplayRecords.aspx&filecode=DisplayRecords.aspx.cs");
+    }
+    protected void BtnSearch_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("SearchRecords.aspx");
+    }
 }
