@@ -1,0 +1,74 @@
+﻿@model _ass2mvc.Models.Art
+
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-header">
+    <h1>Search art <small>by Title</small></h1>
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("Search", "Art", FormMethod.Get))
+    {
+        <div class="col-md-4">
+            <input type="text" name="query" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    }
+</div>
+<div class="row">
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Search results of Art</h3>
+            </div>
+            <div class="panel-body">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ArtName)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.ArtName)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ArtYears)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.ArtYears)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Notes)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Notes)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Photo)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Photo)
+                    </h4>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

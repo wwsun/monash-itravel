@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Art">
+    <Key>
+      <PropertyRef Name="ArtID" />
+    </Key>
+    <Property Name="ArtID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArtName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ArtYears" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Notes" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AuthorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.FK_Art_Author" FromRole="Art" ToRole="Author" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="AuthorID" />
+    </Key>
+    <Property Name="AuthorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Arts" Relationship="Self.FK_Art_Author" FromRole="Author" ToRole="Art" />
+  </EntityType>
+  <Association Name="FK_Art_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Art" Type="Self.Art" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="AuthorID" />
+      </Principal>
+      <Dependent Role="Art">
+        <PropertyRef Name="AuthorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EntitiesConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Arts" EntityType="Self.Art" />
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <AssociationSet Name="FK_Art_Author" Association="Self.FK_Art_Author">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="Art" EntitySet="Arts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

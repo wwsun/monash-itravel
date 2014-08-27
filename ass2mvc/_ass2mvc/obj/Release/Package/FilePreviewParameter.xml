@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="_ass2mvc" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\MyProject\\dotnet\\_ass2mvc\\_ass2mvc\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\MyProject\\dotnet\\_ass2mvc\\_ass2mvc\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="_ass2mvc/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\MyProject\\dotnet\\_ass2mvc\\_ass2mvc\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-_ass2mvc-20140824152956;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-_ass2mvc-20140824152956.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\MyProject\\dotnet\\_ass2mvc\\_ass2mvc\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="EntitiesConnection-Web.config Connection String" description="" value="metadata=res://*/Models.DataModel.csdl|res://*/Models.DataModel.ssdl|res://*/Models.DataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDb)\v11.0;attachdbfilename=|DataDirectory|\aspnet-_ass2mvc-20140824152956.mdf;initial catalog=aspnet-_ass2mvc-20140824152956;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\MyProject\\dotnet\\_ass2mvc\\_ass2mvc\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesConnection']/@connectionString" />
+  </parameter>
+</parameters>

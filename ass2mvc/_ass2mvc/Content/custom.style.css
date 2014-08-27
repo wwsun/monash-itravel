@@ -1,0 +1,49 @@
+﻿.menu-topper {
+    height: 100px;
+    background-color:#000;
+}
+
+.menu-logo {
+    height: 80px;
+    padding-top: 25px;
+}
+
+.menu-bar {
+    padding-top: 25px;
+}
+
+
+.menu-login {
+    font-family: sans-serif;
+    color: #FFF;
+    height: 50px;
+    background-color: #777;
+}
+
+.menu-login p{
+    margin-top: 15px;
+}
+
+.menu-login a {
+    color:#FFF;
+}
+.menu-login a:hover {
+    color: #428bca;
+    text-decoration:none;
+}
+
+.menu-logoff {
+    margin-top: 15px;
+}
+.footer-copyright {
+    color:#FFF;
+    background-color:#000;
+}
+
+.footer-copyright h4 {
+    color:#1ABC9C;
+}
+
+.footer-copyright a {
+    color:#FFF;
+}

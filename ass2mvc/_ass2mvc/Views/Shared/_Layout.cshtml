@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Display your wonderful travel</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/custom")
+    @Styles.Render("~/Content/datatables")
+    @Styles.Render("~/Content/themes/base/css")
+    
+</head>
+<body>
+    <div class="container">
+
+        <div class="row menu-topper">
+            <div class="col-md-3 col-md-offset-1">
+                <img src="~/Images/logo.png" alt="Logo" class="menu-logo" />
+            </div>
+            <div class="col-md-5 col-md-offset-3 menu-bar">
+                <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li id="liHome">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Art", "Index", "Art")</li>
+                        <li>@Html.ActionLink("Author", "Index", "Author")</li>
+                        <li>@Html.ActionLink("Seach", "Display", "Art")</li>
+                        <li id="liAbout">@Html.ActionLink("Documentation", "About", "Home")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="menu-login">
+                <div class="col-md-12">
+                     @Html.Partial("_LoginPartial")
+                </div>
+            </div> 
+        </div>
+
+        
+        @RenderSection("featured", required: false)
+
+
+        @RenderBody()
+
+        <footer>
+            <div class="row">
+                <!-- second row -->
+                <hr />
+                <div class="col-md-3 col-md-offset-2">
+                    <h4>About</h4>
+                    <a href="#" target="_Blank">Acknowledgements</a><br>
+                    <a href="https://github.com/wwsun/" target="_Blank">Project Address</a><br>
+                    <a href="http://users.monash.edu.au/~sgrose/msh/disclaimer.htm" target="_Blank">Monash course disclaimer</a><br>
+                </div>
+                <div class="col-md-3">
+                    <h4>Devloper</h4>
+                    <a href="http://wwsun.github.io/about.html" target="_Blank">Weiwei SUN</a>
+                    <br>
+                    <a href="https://github.com/wwsun" target="_Blank">Github Home</a><br>
+                    <a href="http://wwsun.github.com" target="_Blank">Developer Blog</a>
+                </div>
+                <div class="col-md-3">
+                    <h4>University</h4>
+                    <a href="http://www.monash.edu.au" target="_Blank">Monash University</a>
+                    <br>
+                    <a href="http://www.seu.edu.cn" target="_Blank">Southeast University</a>
+                </div>
+            </div>
+            <div class="row">
+                <br />
+                <br />
+            </div>
+            <div class="row footer-copyright">
+                <!-- fifty row -->
+                <div class="copyright">
+                    <br />
+                    <p class="text-center">
+                        Copyright © @DateTime.Now.Year Weiwei SUN, Monash University. All Rights Reserved.
+                        <b><a href="http://users.monash.edu.au/~sgrose/msh/disclaimer.htm" target="_Blank">Monash course disclaimer</a></b>
+                    </p>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

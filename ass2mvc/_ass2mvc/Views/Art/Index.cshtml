@@ -1,0 +1,75 @@
+﻿@model IEnumerable<_ass2mvc.Models.Art>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <h1>Art List <small>of iTravel</small></h1>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="artTbl" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtYears)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author.FirstName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArtName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArtYears)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Photo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author.FirstName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ArtID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ArtID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ArtID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#artTbl').dataTable({
+                "order": [[3, "desc"]]
+            });
+        });
+    </script>
+}

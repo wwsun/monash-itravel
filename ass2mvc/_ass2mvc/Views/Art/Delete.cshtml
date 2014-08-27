@@ -1,0 +1,54 @@
+﻿@model _ass2mvc.Models.Art
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Art</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArtName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArtName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArtYears)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArtYears)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Photo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Photo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author.FirstName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

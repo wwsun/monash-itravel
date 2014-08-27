@@ -1,0 +1,79 @@
+﻿@model _ass2mvc.Models.Art
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="page-header">
+    <h1>Art Detail</h1>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Author information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ArtName)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.ArtName)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ArtYears)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.ArtYears)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Notes)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Notes)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Photo)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Photo)
+                    </h4>
+                </div>
+
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Author.FirstName)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Author.FirstName)
+                    </h4>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <img src="~/Images/home/sip.jpg" class="img-rounded" height="330" width="350" />
+    </div>
+</div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ArtID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

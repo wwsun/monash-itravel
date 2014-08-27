@@ -1,0 +1,67 @@
+﻿@model _ass2mvc.Models.Author
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <h1>Author Detail</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Author information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.FirstName)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.LastName)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Email)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Email)
+                    </h4>
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Address)
+                </div>
+                <div class="col-md-offset-1">
+                    <h4>
+                        @Html.DisplayFor(model => model.Address)
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <img src="~/Images/home/reg.jpg" class="img-rounded" height="280" width="350" />
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuthorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
